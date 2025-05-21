@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Bars3Icon } from "@heroicons/react/24/solid";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +14,9 @@ function Header() {
         <Bars3Icon className="h-8 w-8 text-sky-800" />
       </button>
 
-      <h1 className="text-4xl font-bold text-sky-800">The Source</h1>
+      <Link to={"/"}>
+        <h1 className="text-4xl font-bold text-sky-800">The Source</h1>
+      </Link>
 
       <div className="absolute right-6">
         <img
@@ -26,15 +29,9 @@ function Header() {
       {isOpen && (
         <div className="absolute top-full left-6 mt-2 w-40 bg-white shadow-lg rounded-md border border-gray-200 z-50">
           <ul>
-            <li>
-                Coding
-            </li>
-            <li>
-                Football 
-            </li>
-            <li>
-                Cooking
-            </li>
+            <li>Coding</li>
+            <li>Football</li>
+            <li>Cooking</li>
           </ul>
         </div>
       )}
